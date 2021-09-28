@@ -1,0 +1,22 @@
+{
+  "name": "todo-tracker",
+  "version": "1.0.0",
+  "description": "A simple app tracking user-added lists and tasks",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "watch": "webpack --watch"
+  },
+  "author": "developedbygeo",
+  "license": "MIT",
+  "devDependencies": {
+    "css-loader": "^6.3.0",
+    "html-webpack-plugin": "^5.3.2",
+    "sass": "^1.42.1",
+    "sass-loader": "^12.1.0",
+    "style-loader": "^3.3.0",
+    "webpack": "^5.55.0",
+    "webpack-cli": "^4.8.0"
+  }
+}
