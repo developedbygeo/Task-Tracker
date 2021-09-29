@@ -1,0 +1,47 @@
+header {
+  height: 10vh;
+  background: #2c394b;
+  @include flex(flex-start, flex-end, row);
+  .wrapper {
+    height: 75%;
+    width: 90%;
+    margin: auto;
+  }
+  img {
+    height: 100%;
+  }
+}
+main {
+  height: 90vh;
+}
+.main-section {
+  background: #082032;
+  height: 100%;
+}
+.buttons {
+  width: 90%;
+  height: 5%;
+  margin: auto;
+  @include grid(repeat(2, 1fr), 1fr);
+}
+.btn-wrap {
+  i {
+    color: $button-gray;
+    font-size: 2.5rem;
+    transition: all 150ms ease-in-out;
+  }
+}
+.btn-wrap:hover {
+  i {
+    color: $cultured;
+  }
+}
+.wrap-toggle {
+  @include flex(flex-start, flex-end, row);
+}
+.wrap-clear {
+  @include flex(flex-end, flex-end, row);
+}
+.task-wrapper {
+  height: 94%;
+}
