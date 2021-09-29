@@ -1,29 +1,36 @@
 const path = require("path");
+const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   mode: "development",
-  entry: "./src/index.js",
-  devtool: "source-map",
+  entry: {
+    main: "./src/index.js",
+  },
+  devtool: "eval",
+  devServer: {
+    hot: true,
+    port: 3000,
+  },
   plugins: [
+    new CopyWebpackPlugin({
+      patterns: [{ from: "./src/img/", to: "./img" }],
+    }),
     new HtmlWebpackPlugin({
       template: "/src/index.html",
       inject: true,
       author: process.env.AUTHOR,
       title: "To-do Tracker",
     }),
+    new MiniCssExtractPlugin(),
   ],
-  output: {
-    filename: "bundle.js",
-    path: path.resolve(__dirname, "dist"),
-    clean: true,
-    assetModuleFilename: "assets/[name]-[hash:3].[ext][query]",
-  },
   module: {
     rules: [
       {
         test: /\.(s(a|c)ss)$/,
-        use: ["style-loader", "css-loader", "sass-loader"],
+        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
@@ -34,5 +41,11 @@ module.exports = {
         type: "asset/resource",
       },
     ],
+  },
+  output: {
+    filename: "[name].js",
+    path: path.resolve(__dirname, "dist"),
+    clean: true,
+    assetModuleFilename: "assets/[name]-[hash:3].[ext][query]",
   },
 };
