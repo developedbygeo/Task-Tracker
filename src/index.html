@@ -3,9 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
     <meta name="author" content="developedbygeo" />
+    <link rel="stylesheet" href="./main.css" />
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
-  <body></body>
+  <body>
+    <header>
+      <div class="wrapper">
+        <a href="#"><img src="./img/logo.png" alt="logo" /></a>
+      </div>
+    </header>
+    <main>
+      <nav class="nav"></nav>
+      <section class="main-section">
+        <div class="buttons">
+          <div class="btn-wrap wrap-toggle"><button class="toggle selection-button">
+            <i class="fas fa-th-list"></i></div>
+          </button>
+          <div class="btn-wrap wrap-clear"><button class="clear selection-button">
+            <i class="fas fa-eraser"></i></div>
+          </button>
+        </div>
+        <div class="task-wrapper"></div>
+      </section>
+    </main>
+  </body>
 </html>
