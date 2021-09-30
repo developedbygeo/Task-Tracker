@@ -1,14 +1,16 @@
 header {
   height: 10vh;
   background: $charcoal-secondary;
-  @include flex(flex-start, flex-end, row);
+  @include flex(center, center, row);
   .wrapper {
+    @include flex(center, center, row);
     height: 75%;
-    width: 90%;
+    width: 100%;
+    text-align: center;
     margin: auto;
   }
   img {
-    height: 100%;
+    width: 60%;
   }
 }
 main {
@@ -67,34 +69,29 @@ main {
   li {
     margin-top: 10%;
     transition: all 80ms ease-in-out;
+    position: relative;
     width: 35%;
+    color: $button-gray;
+    cursor: pointer;
   }
   li:hover {
     transform: scale(1.05);
-  }
-  .link {
-    color: $button-gray;
-    position: relative;
-    transition: all 80ms ease-in-out;
-  }
-  .link:hover {
     color: $cultured;
-    transform: scale(1.02);
   }
-  .link::after {
+  li::after {
     content: "";
     position: absolute;
     height: 1.2px;
-    bottom: -2px;
+    bottom: -1.5px;
     left: 0%;
     right: 0%;
     width: 0%;
     margin: 0 auto;
     transition: 100ms ease-in-out;
   }
-  .link:hover::after {
+  li:hover::after {
     width: 80%;
-    background: $portland;
+    background: $alt-orange;
   }
   .current-tasks {
     width: 95%;
@@ -103,11 +100,14 @@ main {
     color: $cultured;
   }
 }
+.nav-active {
+  transform: translateX(0%);
+}
 // TODO create li-active class
 .toggle {
   border: none;
   position: absolute;
-  padding: 0.1rem 0.15rem;
+  padding: 0.8rem;
   font-size: 2rem;
   top: 0;
   right: 0;
@@ -120,6 +120,6 @@ main {
     display: none;
   }
 }
-.nav-active {
-  transform: translateX(0%);
+.clear {
+  margin: 0.5vh;
 }
