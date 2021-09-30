@@ -1,6 +1,6 @@
 header {
   height: 10vh;
-  background: #2c394b;
+  background: $charcoal-secondary;
   @include flex(flex-start, flex-end, row);
   .wrapper {
     height: 75%;
@@ -13,6 +13,7 @@ header {
 }
 main {
   height: 90vh;
+  position: relative;
 }
 .main-section {
   background: #082032;
@@ -44,4 +45,81 @@ main {
 }
 .task-wrapper {
   height: 94%;
+}
+
+// nav
+.nav {
+  height: 90%;
+  width: 35%;
+  position: fixed;
+  top: 10%;
+  left: 0%;
+  transform: translateX(-100%);
+  transition: all 250ms ease-in-out;
+  background: $charcoal-secondary;
+  ul {
+    width: 95%;
+    margin: auto;
+    margin-top: 1%;
+    font-size: 1.6rem;
+    padding: 1rem;
+  }
+  li {
+    margin-top: 10%;
+    transition: all 80ms ease-in-out;
+    width: 35%;
+  }
+  li:hover {
+    transform: scale(1.05);
+  }
+  .link {
+    color: $button-gray;
+    position: relative;
+    transition: all 80ms ease-in-out;
+  }
+  .link:hover {
+    color: $cultured;
+    transform: scale(1.02);
+  }
+  .link::after {
+    content: "";
+    position: absolute;
+    height: 1.2px;
+    bottom: -2px;
+    left: 0%;
+    right: 0%;
+    width: 0%;
+    margin: 0 auto;
+    transition: 100ms ease-in-out;
+  }
+  .link:hover::after {
+    width: 80%;
+    background: $portland;
+  }
+  .current-tasks {
+    width: 95%;
+    margin: auto;
+    margin-top: 2rem;
+    color: $cultured;
+  }
+}
+// TODO create li-active class
+.toggle {
+  border: none;
+  position: absolute;
+  padding: 0.1rem 0.15rem;
+  font-size: 2rem;
+  top: 0;
+  right: 0;
+  transform: translateX(100%);
+  color: $cultured;
+  .fa-th-list {
+    display: block;
+  }
+  .fa-times {
+    display: none;
+  }
+}
+.nav-active {
+  transform: translateX(0%);
 }
