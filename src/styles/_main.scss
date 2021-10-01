@@ -14,12 +14,19 @@ header {
   }
 }
 main {
-  height: 90vh;
+  background: #082032;
+  height: auto;
+  min-height: 90vh;
   position: relative;
 }
 .main-section {
-  background: #082032;
+  @include grid(repeat(2, 1fr), auto);
+  gap: 2rem;
   height: 100%;
+  position: relative;
+  width: 95%;
+  margin: auto;
+  margin-top: 5vh;
 }
 .buttons {
   width: 90%;
@@ -27,28 +34,12 @@ main {
   margin: auto;
   @include grid(repeat(2, 1fr), 1fr);
 }
-.btn-wrap {
-  i {
-    color: $button-gray;
-    font-size: 2.5rem;
-    transition: all 150ms ease-in-out;
-  }
-}
-.btn-wrap:hover {
-  i {
-    color: $cultured;
-  }
-}
 .wrap-toggle {
   @include flex(flex-start, flex-end, row);
 }
 .wrap-clear {
   @include flex(flex-end, flex-end, row);
 }
-.task-wrapper {
-  height: 94%;
-}
-
 // nav
 .nav {
   height: 90%;
@@ -108,7 +99,7 @@ main {
   border: none;
   position: absolute;
   padding: 0.8rem;
-  font-size: 2rem;
+  font-size: 3rem;
   top: 0;
   right: 0;
   transform: translateX(100%);
@@ -120,6 +111,85 @@ main {
     display: none;
   }
 }
+.wrap-clear {
+  width: 98%;
+  @include flex(flex-end, center, row);
+}
 .clear {
-  margin: 0.5vh;
+  margin-top: 0.5%;
+  i {
+    font-size: 3.5rem;
+    color: $button-gray;
+    transition: all 150ms ease-in-out;
+  }
+  i:hover {
+    color: $cultured;
+  }
+}
+.task-wrapper {
+  @include grid(1fr, 0.2fr auto 0.2fr 0.2fr);
+  background: rgba($rich-black, $alpha: 0.3);
+  transition: all 100ms ease-in-out;
+  color: $cultured;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  position: relative;
+  border-radius: 1rem;
+}
+.check-wrapper {
+  position: absolute;
+  top: 2%;
+  right: 2%;
+  i {
+    font-size: 2rem;
+    color: $cultured;
+  }
+}
+
+.data-wrap {
+  @include grid(repeat(2, 1fr), 1fr);
+  font-size: 1.4rem;
+}
+.data-header {
+  color: $button-gray;
+}
+.desc-wrap {
+  @include grid(1fr, 0.2fr minmax(20rem, auto));
+  height: auto;
+  .data-header {
+    margin-top: 0.5rem;
+  }
+  .info-wrapper {
+    overflow-wrap: anywhere;
+    word-break: break-all;
+  }
+}
+.task-wrapper,
+.data-wrap,
+.desc-wrap {
+  gap: 1rem;
+}
+.header-wrapper {
+  text-align: center;
+  margin-top: 1vh;
+}
+.info-desc {
+  @include flex(flex-start, flex-start, row);
+}
+.data-header,
+.info-desc,
+.date-wrap,
+.prio-wrap {
+  width: 95%;
+  height: 100%;
+  margin: auto;
+}
+.check-active {
+  opacity: 0.55;
+}
+.check-active-btn {
+  i {
+    color: $button-persian;
+  }
 }
