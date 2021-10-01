@@ -18,9 +18,14 @@
       </div>
     </header>
     <main>
+      <div class="btn-wrap wrap-clear"><button class="clear selection-button" title="Clear completed tasks">
+        <i class="fas fa-eraser"></i></div>
+      </button>
+    </div>
+
       <section class="main-section">
         <nav class="nav">
-          <button class="toggle"><i class="fas fa-th-list"></i><i class="fas fa-times"></i></button>
+          <button class="toggle" title="Toggle side view"><i class="fas fa-th-list"></i><i class="fas fa-times"></i></button>
           <h3 class="current-tasks">Current Projects</h3>
           <ul>
             <li class="test-item item1">Test 1</li>
@@ -30,12 +35,27 @@
             <li class="test-item item5">Test 5</li>
           </ul>
         </nav>
-          <div class="btn-wrap wrap-clear"><button class="clear selection-button">
-            <i class="fas fa-eraser"></i></div>
-          </button>
-        </div>
-        <div class="task-wrapper"></div>
       </section>
     </main>
   </body>
+  <template>
+    <div class="task-wrapper">
+      <div class="check-wrapper"><button class="check" title="Mark as completed"><i class="far fa-check-square"></i></button></div>
+      <div class="header-wrapper">
+        <h3>Task 1</h3>
+      </div>
+      <div class="data-wrap desc-wrap">
+        <div class="data-header"><p>Description</p></div>
+        <div class="info-wrapper info-desc"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, quibusdam.</p></div>
+      </div>
+      <div class="data-wrap date-wrap">
+        <div class="data-header"><p>Due Date:</p></div>
+        <div class="info-wrapper"><p>10/05/2022</p></div>
+      </div>
+      <div class="data-wrap prio-wrap">
+        <div class="data-header">Priority:</div>
+        <div class="info-wrapper"><p>High</p></div>
+      </div>
+    </div>
+  </template>
 </html>
