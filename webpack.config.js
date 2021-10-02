@@ -22,7 +22,7 @@ module.exports = {
       template: "/src/index.html",
       inject: true,
       author: process.env.AUTHOR,
-      title: "To-do Tracker",
+      title: "Task Tracker",
     }),
     new MiniCssExtractPlugin(),
   ],
