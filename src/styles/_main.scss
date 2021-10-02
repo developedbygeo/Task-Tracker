@@ -1,72 +1,111 @@
 header {
   height: 10vh;
-  background: $charcoal-secondary;
-  @include flex(center, center, row);
-  .wrapper {
-    @include flex(center, center, row);
-    height: 75%;
-    width: 100%;
-    text-align: center;
-    margin: auto;
-  }
+  @include grid(0.8fr 0.8fr, 1fr);
+  background: $dark-sec;
+}
+.logo-wrapper {
+  width: 90%;
+  margin: auto;
   img {
-    width: 60%;
+    width: 30%;
+  }
+}
+.search-wrapper {
+  width: 95%;
+  margin: auto;
+  @include flex(center, center, row);
+  position: relative;
+  input {
+    border: none;
+    outline: none;
+    background: $dark-tert;
+    color: $button-gray;
+    border-radius: 1rem;
+    width: 100%;
+  }
+  i {
+    position: absolute;
+    right: 5%;
+    color: $button-gray;
   }
 }
 main {
-  background: #082032;
+  background: $dark-main;
   height: auto;
   min-height: 90vh;
   position: relative;
 }
-.main-section {
-  @include grid(repeat(2, 1fr), auto);
-  gap: 2rem;
-  height: 100%;
-  position: relative;
-  width: 95%;
-  margin: auto;
-  margin-top: 5vh;
-}
-.buttons {
-  width: 90%;
-  height: 5%;
-  margin: auto;
-  @include grid(repeat(2, 1fr), 1fr);
-}
-.wrap-toggle {
-  @include flex(flex-start, flex-end, row);
-}
-.wrap-clear {
-  @include flex(flex-end, flex-end, row);
-}
-// nav
-.nav {
-  height: 90%;
-  width: 35%;
+// TODO create opacity:1 class for nav-bar on hover
+.nav-bar {
   position: fixed;
-  top: 10%;
+  bottom: 0%;
+  background: $dark-sec;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  @include flex(space-around, center, row);
+  width: 40%;
+  height: 5vh;
+  border-radius: 1rem 1rem 0rem 0rem;
+  opacity: 0.5;
+  button {
+    color: $button-gray;
+    transition: all 80ms ease-in-out;
+  }
+  button:hover {
+    color: $cultured;
+    transform: scale(1.05);
+  }
+  i {
+    pointer-events: none;
+    font-size: 1.8rem;
+  }
+}
+
+// nav-side
+.nav {
+  color: $button-gray;
+  background: $dark-tert;
+  min-height: 90vh;
+  height: 100%;
+  width: 25%;
+  position: absolute;
+  top: 0%;
   left: 0%;
+  z-index: 1;
+  @include grid(1fr, 0.1fr auto);
+  gap: 2vh;
   transform: translateX(-100%);
-  transition: all 250ms ease-in-out;
-  background: $charcoal-secondary;
-  ul {
-    width: 95%;
+  transition: all 200ms ease-in-out;
+  .close {
+    position: absolute;
+    right: 5%;
+    color: $button-gray;
+    transition: all 80ms ease-in-out;
+  }
+  .close:hover {
+    color: $cultured;
+  }
+  .wrapper {
+    width: 90%;
     margin: auto;
-    margin-top: 1%;
-    font-size: 1.6rem;
-    padding: 1rem;
+    margin-top: 5vh;
+  }
+  ul {
+    @include grid(auto, auto);
+    word-wrap: anywhere;
   }
   li {
-    margin-top: 10%;
+    width: 90%;
+    margin: auto;
+    margin-left: 0.7rem;
+    cursor: pointer;
+    margin-block: 3%;
     transition: all 80ms ease-in-out;
     position: relative;
-    width: 35%;
-    color: $button-gray;
-    cursor: pointer;
+    align-self: center;
   }
   li:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
     color: $cultured;
   }
   li::after {
@@ -75,60 +114,35 @@ main {
     height: 1.2px;
     bottom: -1.5px;
     left: 0%;
-    right: 0%;
     width: 0%;
     margin: 0 auto;
     transition: 100ms ease-in-out;
   }
   li:hover::after {
-    width: 80%;
-    background: $alt-orange;
-  }
-  .current-tasks {
-    width: 95%;
-    margin: auto;
-    margin-top: 2rem;
-    color: $cultured;
+    width: 50%;
+    background: $cerulean;
   }
 }
 .nav-active {
   transform: translateX(0%);
 }
-// TODO create li-active class
-.toggle {
-  border: none;
-  position: absolute;
-  padding: 0.8rem;
-  font-size: 3rem;
-  top: 0;
-  right: 0;
-  transform: translateX(100%);
+.current-wrapper {
+  color: $button-gray;
+  height: 5vh;
+  @include flex(center, center, row);
+}
+.main-section {
+  @include grid(repeat(2, 1fr), auto);
+  gap: 2rem;
+  height: 100%;
+  position: relative;
+  width: 95%;
+  margin: auto;
   color: $cultured;
-  .fa-th-list {
-    display: block;
-  }
-  .fa-times {
-    display: none;
-  }
-}
-.wrap-clear {
-  width: 98%;
-  @include flex(flex-end, center, row);
-}
-.clear {
-  margin-top: 0.5%;
-  i {
-    font-size: 3.5rem;
-    color: $button-gray;
-    transition: all 150ms ease-in-out;
-  }
-  i:hover {
-    color: $cultured;
-  }
 }
 .task-wrapper {
-  @include grid(1fr, 0.2fr auto 0.2fr 0.2fr);
-  background: rgba($rich-black, $alpha: 0.3);
+  @include grid(1fr, 0.1fr 0.2fr auto 0.2fr 0.2fr);
+  background: $dark-sec;
   transition: all 100ms ease-in-out;
   color: $cultured;
   width: 100%;
@@ -138,24 +152,24 @@ main {
   border-radius: 1rem;
 }
 .check-wrapper {
-  position: absolute;
-  top: 2%;
-  right: 2%;
+  @include flex(flex-end, center, row);
+  width: 90%;
+  height: 90%;
+  margin: auto;
   i {
-    font-size: 2rem;
-    color: $cultured;
+    color: $button-gray;
   }
 }
-
 .data-wrap {
   @include grid(repeat(2, 1fr), 1fr);
   font-size: 1.4rem;
 }
 .data-header {
   color: $button-gray;
+  text-align: left;
 }
 .desc-wrap {
-  @include grid(1fr, 0.2fr minmax(20rem, auto));
+  @include grid(1fr, 0.2fr minmax(10rem, auto));
   height: auto;
   .data-header {
     margin-top: 0.5rem;
@@ -165,6 +179,10 @@ main {
     word-break: break-all;
   }
 }
+.prio-wrap,
+.d-wrap {
+  text-align: center;
+}
 .task-wrapper,
 .data-wrap,
 .desc-wrap {
@@ -172,7 +190,6 @@ main {
 }
 .header-wrapper {
   text-align: center;
-  margin-top: 1vh;
 }
 .info-desc {
   @include flex(flex-start, flex-start, row);
@@ -184,12 +201,4 @@ main {
   width: 95%;
   height: 100%;
   margin: auto;
-}
-.check-active {
-  opacity: 0.55;
-}
-.check-active-btn {
-  i {
-    color: $button-persian;
-  }
 }
