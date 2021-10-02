@@ -35,14 +35,14 @@ main {
   min-height: 90vh;
   position: relative;
 }
-// TODO create opacity:1 class for nav-bar on hover
 .nav-bar {
+  @include flex(space-around, center, row);
   position: fixed;
   bottom: 0%;
   background: $dark-sec;
   left: 50%;
+  transition: all 100ms linear;
   transform: translate(-50%, 0%);
-  @include flex(space-around, center, row);
   width: 40%;
   height: 5vh;
   border-radius: 1rem 1rem 0rem 0rem;
@@ -52,13 +52,16 @@ main {
     transition: all 80ms ease-in-out;
   }
   button:hover {
-    color: $cultured;
+    color: $cerulean;
     transform: scale(1.05);
   }
   i {
     pointer-events: none;
     font-size: 1.8rem;
   }
+}
+.nav-bar:hover {
+  opacity: 1;
 }
 
 // nav-side
@@ -75,7 +78,7 @@ main {
   @include grid(1fr, 0.1fr auto);
   gap: 2vh;
   transform: translateX(-100%);
-  transition: all 200ms ease-in-out;
+  transition: all 350ms ease-in-out;
   .close {
     position: absolute;
     right: 5%;
@@ -183,6 +186,9 @@ main {
 .d-wrap {
   text-align: center;
 }
+.prio-wrap {
+  padding-bottom: 1rem;
+}
 .task-wrapper,
 .data-wrap,
 .desc-wrap {
@@ -201,4 +207,75 @@ main {
   width: 95%;
   height: 100%;
   margin: auto;
+}
+// add menu
+.menu-add {
+  @include grid(1fr, auto);
+  gap: 2rem;
+  background: $dark-sec;
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  left: 50%;
+  bottom: 0%;
+  border-radius: 2rem;
+  transform: translate(-50%, -50%);
+  transition: all 350ms cubic-bezier(0.63, 0.02, 0.56, 0.8);
+  visibility: hidden;
+  opacity: 0;
+  input,
+  select {
+    border-radius: 1rem;
+    outline: none;
+  }
+  input {
+    @include input-placeholder {
+      text-align: center;
+    }
+  }
+}
+.menu-add-active {
+  visibility: visible;
+  opacity: 1;
+}
+.menu-header {
+  color: $button-gray;
+  @include flex(center, center, row);
+}
+.input-wrapper {
+  @include flex(center, center, row);
+}
+.control-buttons {
+  color: $button-gray;
+  @include grid(repeat(2, 1fr), 1fr);
+  gap: 2rem;
+  button {
+    width: 50%;
+    height: 100%;
+    border-radius: 1rem;
+    transition: all 80ms ease;
+    background: $dark-tert;
+    color: $button-gray;
+  }
+  i {
+    font-size: 1.8rem;
+  }
+}
+.btn-wrap-accept {
+  @include flex(flex-end, center, row);
+  button:hover {
+    background: $green-cta;
+    color: $cultured;
+  }
+}
+.btn-wrap-decline {
+  @include flex(flex-start, center, row);
+  button:hover {
+    background: $red-cta;
+    color: $cultured;
+  }
+}
+#title,
+#description {
+  width: 80%;
 }
