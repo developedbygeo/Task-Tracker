@@ -1,11 +1,9 @@
 $cultured: #f5f5f5;
-$portland: #ff4c29;
-$alt-orange: #f8733b;
-$blue-main: #082032;
-$charcoal-secondary: #2c394b;
-$rich-black: #030b12;
 $button-gray: #d5d5d5;
-$button-persian: #2a9d8f;
+$dark-main: #121212;
+$dark-sec: #1f1f1f;
+$dark-tert: #292929;
+$cerulean: #3faad7;
 
 @mixin flex($justify, $align, $dir) {
   display: flex;
