@@ -4,6 +4,8 @@ $dark-main: #121212;
 $dark-sec: #1f1f1f;
 $dark-tert: #292929;
 $cerulean: #3faad7;
+$red-cta: #ff0021;
+$green-cta: #5cdb5c;
 
 @mixin flex($justify, $align, $dir) {
   display: flex;
@@ -15,4 +17,42 @@ $cerulean: #3faad7;
   display: grid;
   grid-template-columns: $col;
   grid-template-rows: $row;
+}
+@mixin input-placeholder {
+  &.placeholder {
+    @content;
+  }
+  &:-moz-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &:-ms-input-placeholder {
+    @content;
+  }
+  &::-webkit-input-placeholder {
+    @content;
+  }
+}
+$breakpoints: (
+  "phone": 400px,
+  "phone-wide": 480px,
+  "phablet": 560px,
+  "tablet-small": 640px,
+  "tablet": 768px,
+  "tablet-wide": 1024px,
+  "desktop": 1248px,
+  "desktop-wide": 1440px,
+);
+@mixin mq($width, $type: min) {
+  @if map_has_key($breakpoints, $width) {
+    $width: map_get($breakpoints, $width);
+    @if $type == max {
+      $width: $width - 1px;
+    }
+    @media only screen and (#{$type}-width: $width) {
+      @content;
+    }
+  }
 }
