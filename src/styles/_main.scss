@@ -52,16 +52,24 @@ main {
     transition: all 80ms ease-in-out;
   }
   button:hover {
-    color: $cerulean;
     transform: scale(1.05);
   }
   i {
     pointer-events: none;
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 }
 .nav-bar:hover {
   opacity: 1;
+}
+.nav-bar .toggle:hover {
+  color: $cerulean;
+}
+.nav-bar .add:hover {
+  color: $green-cta;
+}
+.nav-bar .clear:hover {
+  color: $red-cta;
 }
 
 // nav-side
@@ -70,7 +78,7 @@ main {
   background: $dark-tert;
   min-height: 90vh;
   height: 100%;
-  width: 25%;
+  width: 30%;
   position: absolute;
   top: 0%;
   left: 0%;
@@ -126,13 +134,32 @@ main {
     background: $cerulean;
   }
 }
+.add-list {
+  @include flex(center, center, row);
+  width: 90%;
+  margin: auto;
+  input {
+    width: 90%;
+    outline: none;
+    position: relative;
+  }
+  .add-new-list {
+    padding: 0.5rem;
+    transition: all 100ms ease-in-out;
+    color: $button-gray;
+  }
+  .add-new-list:hover {
+    color: $green-cta;
+  }
+}
 .nav-active {
   transform: translateX(0%);
 }
 .current-wrapper {
   color: $button-gray;
   height: 5vh;
-  @include flex(center, center, row);
+  margin-bottom: 2rem;
+  @include flex(center, flex-end, row);
 }
 .main-section {
   @include grid(repeat(2, 1fr), auto);
@@ -159,9 +186,13 @@ main {
   width: 90%;
   height: 90%;
   margin: auto;
+  transition: all 400ms ease-in-out;
   i {
     color: $button-gray;
   }
+}
+.check-active {
+  opacity: 0.3;
 }
 .data-wrap {
   @include grid(repeat(2, 1fr), 1fr);
