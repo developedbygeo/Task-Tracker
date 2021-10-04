@@ -89,8 +89,10 @@ main {
   transition: all 350ms ease-in-out;
   .close {
     position: absolute;
+    z-index: 2;
     right: 5%;
     color: $button-gray;
+    padding: 0.5rem;
     transition: all 80ms ease-in-out;
   }
   .close:hover {
@@ -111,7 +113,7 @@ main {
     margin-left: 0.7rem;
     cursor: pointer;
     margin-block: 3%;
-    transition: all 80ms ease-in-out;
+    transition: all 50ms ease-in-out;
     position: relative;
     align-self: center;
   }
@@ -134,6 +136,11 @@ main {
     background: $cerulean;
   }
 }
+.active-project {
+  color: $cultured;
+  border-bottom: 1.5px solid $cerulean;
+  transition: all 80ms linear;
+}
 .add-list {
   @include flex(center, center, row);
   grid-area: 1/1/1/1;
@@ -143,6 +150,12 @@ main {
     width: 90%;
     outline: none;
     position: relative;
+    border: none;
+    outline: none;
+    padding: 0.25rem;
+    border-radius: 0.5rem;
+    background: $dark-fifth;
+    color: $button-gray;
   }
   .add-new-list {
     padding: 0.5rem;
