@@ -76,8 +76,8 @@ main {
 .nav {
   color: $button-gray;
   background: $dark-tert;
-  min-height: 90vh;
-  height: 100%;
+  height: 90vh;
+  overflow: scroll;
   width: 30%;
   position: absolute;
   top: 0%;
@@ -102,7 +102,7 @@ main {
     margin-top: 5vh;
   }
   ul {
-    @include grid(auto, auto);
+    @include grid(auto, 0.1fr repeat(20, 0.1fr));
     word-wrap: anywhere;
   }
   li {
@@ -136,6 +136,7 @@ main {
 }
 .add-list {
   @include flex(center, center, row);
+  grid-area: 1/1/1/1;
   width: 90%;
   margin: auto;
   input {
@@ -219,6 +220,9 @@ main {
 }
 .prio-wrap {
   padding-bottom: 1rem;
+  p {
+    text-transform: capitalize;
+  }
 }
 .task-wrapper,
 .data-wrap,
