@@ -37,6 +37,7 @@ $green-cta: #5cdb5c;
   }
 }
 $breakpoints: (
+  "sphone": 280px,
   "phone": 400px,
   "phone-wide": 480px,
   "phablet": 560px,
@@ -45,14 +46,57 @@ $breakpoints: (
   "tablet-wide": 1024px,
   "desktop": 1248px,
   "desktop-wide": 1440px,
+  "fourK": 3800px,
 );
-@mixin mq($width, $type: min) {
-  @if map_has_key($breakpoints, $width) {
-    $width: map_get($breakpoints, $width);
-    @if $type == max {
-      $width: $width - 1px;
+
+@mixin mq($breakpoint) {
+  @if $breakpoint==sphone {
+    @media only screen and (max-width: 280px) {
+      @content;
     }
-    @media only screen and (#{$type}-width: $width) {
+  }
+  @if $breakpoint==phone {
+    @media only screen and (min-width: 400px) {
+      @content;
+    }
+  }
+  @if $breakpoint==phone-wide {
+    @media only screen and (min-width: 480px) {
+      @content;
+    }
+  }
+  @if $breakpoint==phablet {
+    @media only screen and (min-width: 560px) {
+      @content;
+    }
+  }
+  @if $breakpoint==tablet-small {
+    @media only screen and (min-width: 640px) {
+      @content;
+    }
+  }
+  @if $breakpoint==tablet {
+    @media only screen and (min-width: 768px) {
+      @content;
+    }
+  }
+  @if $breakpoint==tablet-wide {
+    @media only screen and (min-width: 1024px) {
+      @content;
+    }
+  }
+  @if $breakpoint==desktop {
+    @media only screen and (min-width: 1248px) {
+      @content;
+    }
+  }
+  @if $breakpoint==desktop-wide {
+    @media only screen and (min-width: 1440px) {
+      @content;
+    }
+  }
+  @if $breakpoint==fourK {
+    @media only screen and (min-width: 3800px) {
       @content;
     }
   }
