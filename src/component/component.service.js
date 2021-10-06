@@ -50,4 +50,18 @@ export default class Component {
   enableButton() {
     enable(this.id);
   }
+  get keys() {
+    return Object.keys(this);
+  }
+  remove() {
+    this.keys.forEach((key) => delete this[key]);
+  }
 }
+
+class SearchObject {
+  constructor(key, value) {
+    this.key = key;
+    this.value = value;
+  }
+}
+export { SearchObject };
