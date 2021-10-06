@@ -5,6 +5,24 @@
 }
 html {
   font-size: 50%;
+  @include mq(sphone) {
+    font-size: 30%;
+  }
+  @include mq(tablet) {
+    font-size: 62.5%;
+  }
+  @include mq(tablet-wide) {
+    font-size: 75%;
+  }
+  @include mq(desktop-wide) {
+    font-size: 80%;
+  }
+  @include mq(fourK) {
+    font-size: 150%;
+  }
+}
+body {
+  font-family: "Open Sans", sans-serif;
 }
 p,
 label,
@@ -37,4 +55,10 @@ h3 {
 }
 h4 {
   font-size: 1.8rem;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Raleway", sans-serif;
 }
