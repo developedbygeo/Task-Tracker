@@ -1,5 +1,6 @@
 import Component from "../component/component.service.js";
 import { clearDOM } from "./delete.element.js";
+import { cacheLoad } from "../search/cache.js";
 
 export default function setLocalStorage(obj, task) {
   let objectArray = [];
