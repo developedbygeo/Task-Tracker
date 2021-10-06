@@ -22,6 +22,9 @@ header {
     color: $button-gray;
     border-radius: 1rem;
     width: 100%;
+    @include input-placeholder {
+      padding-left: 1rem;
+    }
   }
   i {
     position: absolute;
@@ -44,8 +47,8 @@ main {
   transition: all 100ms linear;
   transform: translate(-50%, 0%);
   width: 40%;
-  height: 5vh;
-  border-radius: 1rem 1rem 0rem 0rem;
+  height: 7vh;
+  border-radius: 2rem 2rem 0rem 0rem;
   opacity: 0.5;
   button {
     color: $button-gray;
@@ -105,6 +108,7 @@ main {
   }
   ul {
     @include grid(auto, 0.1fr repeat(20, 0.1fr));
+    gap: 0.5rem;
     word-wrap: anywhere;
   }
   li {
@@ -147,7 +151,7 @@ main {
   width: 90%;
   margin: auto;
   input {
-    width: 90%;
+    width: 85%;
     outline: none;
     position: relative;
     border: none;
@@ -156,6 +160,10 @@ main {
     border-radius: 0.5rem;
     background: $dark-fifth;
     color: $button-gray;
+    @include input-placeholder {
+      font-size: 1.4rem;
+      text-align: center;
+    }
   }
   .add-new-list {
     padding: 0.5rem;
@@ -200,6 +208,7 @@ main {
   width: 90%;
   height: 90%;
   margin: auto;
+  margin-top: 3%;
   transition: all 400ms ease-in-out;
   i {
     color: $button-gray;
@@ -376,4 +385,5 @@ main {
 #title,
 #description {
   width: 80%;
+  padding: 0.2rem;
 }
