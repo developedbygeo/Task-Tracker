@@ -17,7 +17,12 @@
         <a href="#"><img src="./img/logo.png" alt="logo" /></a>
       </div>
       <div class="search-wrapper">
-        <input type="text" name="search" id="search" />
+        <input
+          type="text"
+          name="search"
+          id="search"
+          placeholder="Search by title..."
+        />
         <i class="fas fa-search"></i>
       </div>
     </header>
@@ -27,8 +32,8 @@
       <div class="warning-wrapper">
         <div class="text-wrapper">
           <p class="warning">
-            Are you sure you want to delete <span class="warn-item"></span>
-            <br />and any tasks associated with it?
+            Are you sure you want to delete <span class="warn-item"></span>and
+            any tasks associated with it?
           </p>
         </div>
         <div class="warn-btn-wrapper">
@@ -55,19 +60,27 @@
               id="list"
               placeholder="New Project"
             />
-            <button class="add-new-list"><i class="fas fa-plus"></i></button>
+            <button class="add-new-list" title="Add New Project">
+              <i class="fas fa-plus"></i>
+            </button>
           </div>
         </ul>
       </nav>
       <div class="nav-bar">
         <div class="nav-btn-wrapper">
-          <button class="toggle"><i class="fas fa-stream"></i></button>
+          <button class="toggle" title="Toggle Projects">
+            <i class="fas fa-stream"></i>
+          </button>
         </div>
         <div class="nav-btn-wrapper">
-          <button class="add"><i class="fas fa-plus"></i></button>
+          <button class="add" title="Add New Task">
+            <i class="fas fa-plus"></i>
+          </button>
         </div>
         <div class="nav-btn-wrapper">
-          <button class="clear"><i class="far fa-trash-alt"></i></button>
+          <button class="clear" title="Remove Project & Tasks">
+            <i class="far fa-trash-alt"></i>
+          </button>
         </div>
       </div>
       <div class="menu-add">
