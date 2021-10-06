@@ -9,7 +9,7 @@ module.exports = {
   entry: {
     main: "./src/index.js",
   },
-  devtool: "eval",
+  devtool: "eval-source-map",
   devServer: {
     hot: true,
     port: 3000,
