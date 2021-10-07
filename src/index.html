@@ -8,6 +8,8 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <meta name="author" content="developedbygeo" />
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="./img/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="./main.css" />
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
@@ -60,6 +62,7 @@
               type="text"
               name="list"
               id="list"
+              onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode==32)"
               placeholder="New Project"
             />
             <button class="add-new-list" title="Add New Project">
