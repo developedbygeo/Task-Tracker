@@ -1,4 +1,4 @@
-# Todo-Tracker
+# Task-Tracker
 
 ![image info](./src/img/sample.JPG)
 
@@ -50,7 +50,7 @@ A massive thank you to The Odin Project & freeCodeCamp community, as their guida
 
 ## Live Version
 
-<https://developedbygeo.github.io/Todo-Tracker>
+<https://developedbygeo.github.io/Task-Tracker>
 
 ## License
 
