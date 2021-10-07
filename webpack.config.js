@@ -9,7 +9,6 @@ module.exports = {
   entry: {
     main: "./src/index.js",
   },
-  devtool: "eval-source-map",
   devServer: {
     hot: true,
     port: 3000,
@@ -19,9 +18,8 @@ module.exports = {
       patterns: [{ from: "./src/img/", to: "./img" }],
     }),
     new HtmlWebpackPlugin({
-      template: "/src/index.html",
+      template: "./src/index.html",
       inject: true,
-      author: process.env.AUTHOR,
       title: "Task Tracker",
     }),
     new MiniCssExtractPlugin(),
@@ -43,7 +41,7 @@ module.exports = {
     ],
   },
   output: {
-    filename: "[name].js",
+    filename: "main.js",
     path: path.resolve(__dirname, "dist"),
     clean: true,
     assetModuleFilename: "assets/[name]-[hash:3].[ext][query]",
