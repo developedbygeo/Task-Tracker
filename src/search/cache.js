@@ -28,7 +28,6 @@ function cacheSearch(value, key = value) {
   const result = cache.filter((object) => {
     return object.value === value;
   });
-  console.log(result);
   if (result.length === 0) return;
   const resultKey = result[0].key;
   const arrayOfObjects = getLocalStorage(resultKey);
