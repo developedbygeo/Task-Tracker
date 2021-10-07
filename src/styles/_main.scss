@@ -9,6 +9,16 @@ header {
   img {
     width: 30%;
   }
+  @include mq(tablet) {
+    img {
+      width: 20%;
+    }
+  }
+  @include mq(sdesktop) {
+    img {
+      width: 12%;
+    }
+  }
   @include mq(desktop) {
     height: 95%;
     @include flex(center, flex-start, column);
@@ -215,6 +225,9 @@ main {
   height: 5vh;
   margin-bottom: 2rem;
   @include flex(center, flex-end, row);
+  @include mq(desktop) {
+    height: 8vh;
+  }
 }
 .main-section {
   @include grid(repeat(2, 1fr), auto);
@@ -383,6 +396,12 @@ main {
     background: $red-cta;
     color: $cultured;
   }
+}
+.btn-wrap-accept,
+.btn-wrap-decline {
+  height: 90%;
+  width: 90%;
+  margin: auto;
 }
 .warning-wrapper {
   position: fixed;
