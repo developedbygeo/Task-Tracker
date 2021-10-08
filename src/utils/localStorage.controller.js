@@ -12,10 +12,10 @@ export default function setLocalStorage(obj, task) {
       : (objectArray = [...getLocalStorage(task)]);
   }
   objectArray.push(obj);
-  localStorage.setItem(`${task}`, JSON.stringify(objectArray));
+  localStorage.setItem(`${task}-TD`, JSON.stringify(objectArray));
 }
 function getLocalStorage(project) {
-  let retrieved = JSON.parse(localStorage.getItem(`${project}`));
+  let retrieved = JSON.parse(localStorage.getItem(`${project}-TD`));
   if (retrieved === null) return (retrieved = []);
   return retrieved;
 }
@@ -52,12 +52,12 @@ function deleteFromLocalStorage(project, value) {
   const retrieved = getLocalStorage(project);
   // if it is an object and NOT an array, delete the whole key
   if (!Array.isArray(retrieved)) {
-    localStorage.removeItem(project);
+    localStorage.removeItem(`${project}-TD`);
     return;
   }
   // in the case it is an array containing only 1 object
   if (retrieved.length === 1) {
-    localStorage.removeItem(project);
+    localStorage.removeItem(`${project}-TD`);
     return;
   }
   // if neither applies, removes the selected obj and pushes to localstorage
@@ -67,7 +67,7 @@ function deleteFromLocalStorage(project, value) {
   });
   clearDOM();
   localStorageProcess(filtered);
-  localStorage.setItem(`${project}`, JSON.stringify(filtered));
+  localStorage.setItem(`${project}-TD`, JSON.stringify(filtered));
   cacheLoad();
 }
 function clearKey(key) {
